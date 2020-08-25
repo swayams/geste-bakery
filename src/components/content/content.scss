@@ -1,0 +1,31 @@
+.newsletter {
+    
+    width: 60%;
+    margin: 10% auto;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+    align-items: center;
+
+    min-height: 15rem;
+
+    h4 {
+        font-size: 1.25em;
+        text-transform: uppercase;
+        padding: 10px;
+
+        border-bottom: 1px solid #e6e6ee;
+    }
+
+    .newsletter-form {
+        width: 80%;
+        margin: 0 auto;
+
+        .newsletter-email-control {
+            height: 1.1em;
+            line-height: 1.1em;
+        }
+    }
+}
