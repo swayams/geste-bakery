@@ -9,6 +9,7 @@ import {
   Divider,
   Hidden,
   Grid,
+  Link,
 } from "@material-ui/core"
 import { ILink } from "./nav"
 
@@ -25,6 +26,9 @@ import ContactMailIcon from "@material-ui/icons/ContactMail"
 import MenuIcon from "@material-ui/icons/Menu"
 import { CSSProperties } from "@material-ui/core/styles/withStyles"
 import { ui } from "./../../constants/ui"
+
+import "./header.scss"
+import images from '../../constants/images';
 
 export interface IHeaderProps {
   siteTitle: string
@@ -43,17 +47,30 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
     return (
       <AppBar position="sticky" style={style}>
         <Toolbar>
-          <Hidden xsUp>
-          <Grid item xs={3} >
-            <TemporaryDrawer style={style.icon} />
-          </Grid>
+          <Hidden mdUp>
+            <Grid item xs={3}>
+              <TemporaryDrawer style={style.icon} />
+            </Grid>
           </Hidden>
-          <Hidden xsDown >
-            <Grid container direction="row">
-              <Grid item xs={3} alignItems="center">Home</Grid>
-              <Grid item xs={3} alignItems="center">Product</Grid>
-              <Grid item xs={3} alignItems="center">About</Grid>
-              <Grid item xs={3} alignItems="center">Contact Us</Grid>
+          <Hidden mdDown>
+            <Grid container direction="row" className="nav">
+              <Grid item xs={2}>         
+                <Link className="link"> Our Story </Link>
+              </Grid>
+              <Grid item xs={2}>
+                <Link className="link"> Creations </Link>
+              </Grid>
+              <Grid item xs={4}>
+                <Link className="title"> 
+                 <img src={images.hLogo} alt="Geste-Croissanterie-Final-logo" border="0" />
+                </Link>
+              </Grid>
+              <Grid item xs={2}>
+                <Link className="link"> Find Us </Link>
+              </Grid>
+              <Grid item xs={2}>
+                <Link className="link"> Order </Link>
+              </Grid>
             </Grid>
           </Hidden>
         </Toolbar>
@@ -63,6 +80,10 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
 }
 
 export default Header
+
+const alignTextCenter = {
+  textAlign: "center",
+}
 
 const useStyles = makeStyles({
   list: {
@@ -100,17 +121,21 @@ const TemporaryDrawer = () => {
 
   const list = (anchor: Anchor) => (
     <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === "top" || anchor === "bottom",
-      })}
+      className={clsx(
+        classes.list,
+        {
+          [classes.fullList]: anchor === "top" || anchor === "bottom",
+        },
+        "mobile-nav"
+      )}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         {links.map(link => (
-          <ListItem button key={link.name}>
-            {link.icon}
+          <ListItem button key={link.name} alignItems="flex-end">
+            {headerNavigationButton.showIcon ? link.icon : null}
             <ListItemText primary={link.name} style={style.listItemTextStyle} />
           </ListItem>
         ))}
@@ -126,7 +151,7 @@ const TemporaryDrawer = () => {
     { name: "Contact Us", icon: <ContactMailIcon /> },
   ]
 
-  const headerNavigationButton = { orientation: "left" }
+  const headerNavigationButton = { orientation: "top", showIcon: false }
 
   return (
     <div>

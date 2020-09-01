@@ -1,5 +1,12 @@
+@import "../../../main.scss";
+
 .footer {
-    .static {
-        text-align: center;
-    }
-}
+  background-color: $color-primary;
+  color: #fff;
+  height: 12em;
+
+  img {
+    height: 12em;
+    margin: 0;
+  }
+} 

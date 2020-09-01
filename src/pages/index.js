@@ -4,22 +4,38 @@ import Layout from "../components/container/layout"
 import HeroCarousel from "../components/carousel/hero"
 
 import Area from "../components/container/area"
-import { Grid } from '@material-ui/core';
+import { Grid } from "@material-ui/core"
 
-import Newsletter from './../components/content/newsletter';
+import Newsletter from "./../components/content/newsletter"
+import Products from "../components/content/products"
+import About from "../components/content/about"
+import Location from "../components/content/location"
+import InstagramFeed from "./../components/plugins/instagram"
+import SimpleTextBlock from "./../components/content/textblock"
 
 const IndexPage = () => (
   <Layout>
-    <Grid container style= {{ height: '100vh'}} >
+    <Grid container style={{ height: "100vh" }}>
       <HeroCarousel></HeroCarousel>
     </Grid>
-
-    <Area id="test 1" alt={true}></Area>
-    <Area id="test 2" alt={false}></Area>
-    <Area id="test 3" alt={true}>
+    <SimpleTextBlock text="Therefore, the smart way to build a massive online following is to embed Instagram feeds and other social media profiles to your website." />
+    <Area id="Products" alt={false}>
+      <Products />
+    </Area>
+    <Area id="Newsletter" alt={true}>
       <Newsletter />
     </Area>
-    <Area id="test 2" alt={false}></Area>
+    <Area id="Story" alt={false}>
+      <About />
+    </Area>
+    <SimpleTextBlock text="Therefore, the smart way to build a massive online following is to embed Instagram feeds and other social media profiles to your website." />
+    
+    <Area id="Location" alt={true}>
+      <Location />
+    </Area>
+    <Area id="Instagram" alt={true}>
+      <InstagramFeed />
+    </Area>
   </Layout>
 )
 

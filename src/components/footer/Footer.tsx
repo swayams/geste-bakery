@@ -3,6 +3,8 @@ import { Grid, Paper, Divider } from "@material-ui/core"
 import { CSSProperties } from "@material-ui/core/styles/withStyles"
 import { ui } from "./../../constants/ui"
 
+import './footer.scss'
+
 export interface IFooterProps {}
 
 export interface IFooterState {}
@@ -15,33 +17,10 @@ class Footer extends React.Component<IFooterProps, IFooterState> {
   render() {
     return (
       <footer>
-        <Grid container style={footer} className="footer">
-          <Grid container direction="row" className="static">
-            <Grid item xs={3}>
-              Lorem
-            </Grid>
-            <Grid item xs={6}>
-              {" "}
-              Copyright 2020. All rights reserved.{" "}
-            </Grid>
-            <Grid item xs={3}>
-              {" "}
-              Ipsum{" "}
-            </Grid>
-          </Grid>
-          <Divider />
-          <Grid container direction="row">
-            <Grid item xs={3}>
-              Lorem
-            </Grid>
-            <Grid item xs={6}>
-              {" "}
-              Copyright 2020. All rights reserved.{" "}
-            </Grid>
-            <Grid item xs={3}>
-              {" "}
-              Ipsum{" "}
-            </Grid>
+        <Grid container  className="footer">
+       
+          <Grid item xs={6} lg={3} >
+            <img src="https://i.ibb.co/LrQsJf6/Geste-Croissanterie-Final-logo-white-round-removebg-preview-1.png" alt="1"></img>
           </Grid>
         </Grid>
       </footer>
@@ -50,12 +29,3 @@ class Footer extends React.Component<IFooterProps, IFooterState> {
 }
 
 export default Footer
-
-const footer: CSSProperties = {
-  textAlign: "center",
-  borderTop: `1px solid ${ui.footer.background.border}`,
-  background: ui.footer.background.color,
-  color: ui.footer.color,
-    
-  padding: "10px",
-}

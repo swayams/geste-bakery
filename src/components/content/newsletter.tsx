@@ -2,6 +2,7 @@ import * as React from "react"
 import { Paper, TextField, Grid } from "@material-ui/core"
 import { Button } from "@material-ui/core"
 import "./content.scss"
+import { CSSProperties } from '@material-ui/core/styles/withStyles';
 
 const Newsletter = props => {
   return (
@@ -12,7 +13,7 @@ const Newsletter = props => {
         <Grid item xs={12} md={8}>
           <TextField id="newsletter-email-control" label="email" variant="outlined" fullWidth />
         </Grid>
-        <Grid container xs={12} md={4} alignItems="center" justify="center" direction="row">
+        <Grid item xs={12} md={4} style={style}>
           <Button variant="contained" color="primary">
             Subscribe
           </Button>
@@ -20,6 +21,12 @@ const Newsletter = props => {
       </Grid>
     </Paper>
   )
+}
+
+const style: CSSProperties= {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
 }
 
 export default Newsletter

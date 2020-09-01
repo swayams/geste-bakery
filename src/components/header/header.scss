@@ -1,0 +1,59 @@
+// Header colors 
+
+$primary: #D94814;
+$text: #2F4F4F;
+
+
+
+
+.mobile-nav {
+  width: 100vw !important;
+}
+
+.title {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.nav {
+  height: 5.5em;
+  line-height: 5.5em;
+  text-align: center;
+  
+  font-size: 14px;
+
+  .link, .title {
+
+    &:hover, &:active {
+        text-decoration: none;
+    }
+
+  }
+
+  .title {
+    
+    img {
+      height: 3.7em;
+      margin-top: 0.3em
+    }
+  }
+
+  .link {
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;   
+    transition: 1s; 
+    color: $text;
+
+    padding: 0.5em;
+
+   
+
+    &:hover {
+
+        border-bottom: 2px solid $primary;
+     
+    }
+  }
+}

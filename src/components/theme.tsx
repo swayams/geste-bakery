@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { createMuiTheme} from "@material-ui/core";
+import { ui } from '../constants/ui';
 
 export const theme = createMuiTheme({
 
@@ -11,8 +12,8 @@ export const theme = createMuiTheme({
     },
     palette: {
         primary: {
-            main: "#ad1457",
-            dark: "#78002e",
+            main: ui.scheme.secondary ,
+            dark: ui.scheme.primary,
             light: "#78002e"
         },
         secondary: {

@@ -1,31 +1,94 @@
+@import "../../../main.scss";
+
 .newsletter {
-    
-    width: 60%;
-    margin: 10% auto;
+  width: 60%;
+  margin: 10% auto;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 15rem;
+
+  h4 {
+    font-size: 1.25em;
+    text-transform: uppercase;
     padding: 10px;
 
+    border-bottom: 1px solid #e6e6ee;
+  }
+
+  .newsletter-form {
+    width: 80%;
+    margin: 0 auto;
+
+    .newsletter-email-control {
+      height: 1.1em;
+      line-height: 1.1em;
+    }
+  }
+}
+
+.about {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
+  .content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;;
-    align-items: center;
+    flex-direction: row;
+    margin: 2rem;
 
-    min-height: 15rem;
+    .profile {
+      height: 8em;
+    }
+  }
+}
 
-    h4 {
-        font-size: 1.25em;
-        text-transform: uppercase;
-        padding: 10px;
+.products {
+  padding: 1rem;
+  .product {
+    background-color: $color-background-primary;
+    position: relative;
 
-        border-bottom: 1px solid #e6e6ee;
+    .card {
+      display: flex;
+      flex-direction: column;
+      .image {
+          height: 12em;
+          width: 100%;
+
+      }
+      .content {
+          
+
+          p {
+              font-size: 14px;
+          }
+      }
     }
 
-    .newsletter-form {
-        width: 80%;
-        margin: 0 auto;
+    .share-Icons {
+      
+    } 
 
-        .newsletter-email-control {
-            height: 1.1em;
-            line-height: 1.1em;
+    .actions {
+        position: absolute;
+        top: 12em;
+        right: 0;
+        background-color: $color-background-primary;
+        opacity: 0.75;
+        
+        justify-content: center;
+        button {
+            padding: 5px;
+
+            svg {
+                height: 20px;
+                color: #fff;
+            }
         }
     }
+  }
 }
