@@ -4,4 +4,5 @@
 4. Responsive
 5. simple text block - done
 6. contact form
+7. react scroll parallax
 

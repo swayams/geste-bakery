@@ -1,13 +1,27 @@
 // Header colors 
+@import "../../../main.scss";
 
-$primary: #D94814;
-$text: #2F4F4F;
+
 
 
 
 
 .mobile-nav {
-  width: 100vw !important;
+  width: auto !important;
+  background-color: $color-background-primary;
+  padding:  auto 1em;
+
+  .MuiListItem-root {
+    
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover, &:active {
+      background-color: $color-ternary;
+      color: #fff;
+    }
+    
+  }
 }
 
 .title {
@@ -42,9 +56,9 @@ $text: #2F4F4F;
   .link {
     text-transform: uppercase;
     font-weight: bold;
-    width: 100%;   
+    width: auto;   
     transition: 1s; 
-    color: $text;
+    color: $color-secondary;
 
     padding: 0.5em;
 
@@ -52,7 +66,7 @@ $text: #2F4F4F;
 
     &:hover {
 
-        border-bottom: 2px solid $primary;
+        border-bottom: 2px solid $color-ternary;
      
     }
   }

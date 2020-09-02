@@ -134,7 +134,7 @@ const TemporaryDrawer = () => {
     >
       <List>
         {links.map(link => (
-          <ListItem button key={link.name} alignItems="flex-end">
+          <ListItem button key={link.name} alignItems="center">
             {headerNavigationButton.showIcon ? link.icon : null}
             <ListItemText primary={link.name} style={style.listItemTextStyle} />
           </ListItem>
@@ -146,9 +146,10 @@ const TemporaryDrawer = () => {
 
   const links = [
     { name: "Home", icon: <HomeIcon /> },
-    { name: "About Us", icon: <SupervisedUserCircleIcon /> },
-    { name: "Our Work", icon: <WorkIcon /> },
-    { name: "Contact Us", icon: <ContactMailIcon /> },
+    { name: "Our Story", icon: <SupervisedUserCircleIcon /> },
+    { name: "Creations", icon: <WorkIcon /> },
+    { name: "Find Us", icon: <ContactMailIcon /> },
+    { name: "Order", icon: <ContactMailIcon /> },
   ]
 
   const headerNavigationButton = { orientation: "top", showIcon: false }

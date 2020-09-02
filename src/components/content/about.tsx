@@ -14,7 +14,7 @@ import { ui } from '../../constants/ui';
 const About = props => {
   return (
     <Grid container className="about" >
-      <Card className="content">
+      <Card className="content" >
         <CardMedia image={images.cProfile} title="virgyl" className="profile">
             <img src={images.cProfile} alt="virgyl"></img>
         </CardMedia>

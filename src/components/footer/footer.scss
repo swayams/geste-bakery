@@ -3,10 +3,85 @@
 .footer {
   background-color: $color-primary;
   color: #fff;
-  height: 12em;
+  height: 17em;
 
-  img {
+  .logo,
+  .newsletter-part,
+  .address, .static {
+    background-color: $color-primary;
+
+    
+  }
+
+  .logo, .address {
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+  }
+
+  .logo > img {
     height: 12em;
     margin: 0;
+
+    @media (max-width: 768px) {
+      height: 8em;
+    }
   }
-} 
+  .newsletter-part {
+    .newsletter {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      background-color: $color-primary;
+
+      h4,
+      label,
+      fieldset {
+        color: white;
+        border-color: white;
+      }
+      button {
+        padding: 10px;
+        background-color: $color-primary;
+        color: white;
+        border-radius: 0;
+        
+
+        border: 1px solid white;
+      }
+    }
+  }
+
+  .address {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+
+    p {
+      padding: 1em;
+    }
+
+    > .MuiGrid-container {
+      justify-content: center;
+    }
+  }
+
+  .static {
+    border-top: 1px solid #ccc;
+    padding: 1em;
+    margin: 1em;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: 200;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

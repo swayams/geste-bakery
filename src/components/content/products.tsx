@@ -86,7 +86,7 @@ class Product extends React.Component<IProductProps, IProductState> {
                   <FavoriteIcon />
                 </IconButton>
                 <IconButton aria-label="share" className="icon" onClick={() => this.share()}>
-                  <ShareIcon  />
+                  <ShareIcon direction="row-reverse" />
                 </IconButton>
               </CardActions>
               
@@ -142,7 +142,7 @@ const style = {
     backgroundColor: ui.scheme.backgroundAlt,
   },
   product: {
-    margin: "10px",
+    
     minHeight: "23.5em",
   },
 

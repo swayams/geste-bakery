@@ -4,7 +4,7 @@ import { Grid } from "@material-ui/core"
 
 export default function SocialMediaButtons(props) {
   return (
-    <Grid container direction="row-reverse">
+    <Grid container direction={props.direction}>
       <FacebookShareButton
         url={"http://www.geste-crossaints.com"}
         quote={" Geste Crossiants - for boutique baked condiments  "}
