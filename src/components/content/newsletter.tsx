@@ -56,13 +56,13 @@ const NewsLetterBlock = props => {
       layers={[
         {
           image: "https://i.ibb.co/RjPWC1p/c-bread-factory.jpg",
-          amount: 0.5,
+          amount: 0.3,
         }
       ]}
       style={{
         height: "100vh",
       }}
-    >
+    > 
       <Newsletter />
     </ParallaxBanner>
   )

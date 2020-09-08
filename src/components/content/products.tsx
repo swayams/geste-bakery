@@ -102,7 +102,7 @@ class Product extends React.Component<IProductProps, IProductState> {
 
                 {
                 this.state.showShareIcons ? 
-                <SocialMediaButtons className="share-Icons"></SocialMediaButtons>
+                <SocialMediaButtons className="share-Icons" direction="row-reverse"></SocialMediaButtons>
                 : ""
               }
               </CardActions>

@@ -13,6 +13,7 @@ import Location from "../components/content/location"
 import InstagramFeed from "./../components/plugins/instagram"
 import SimpleTextBlock from "./../components/content/textblock"
 import { ParallaxProvider } from "react-scroll-parallax"
+import ContactForm from './../components/content/contact';
 
 const IndexPage = () => (
   <ParallaxProvider>
@@ -31,8 +32,10 @@ const IndexPage = () => (
         <About />
       </Area>
       <SimpleTextBlock text="Therefore, the smart way to build a massive online following is to embed Instagram feeds and other social media profiles to your website." />
-
-      <Area id="Location" alt={true}>
+      <Area id="contact" alt={false}>
+        <ContactForm />
+      </Area>
+      <Area id="Location" alt={false}>
         <Location />
       </Area>
       <Area id="Instagram" alt={true}>
