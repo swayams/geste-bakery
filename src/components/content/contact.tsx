@@ -111,7 +111,7 @@ const ContactForm = props => {
         },
       ]}
       style={{
-        height: "100vh",
+        height: "130vh",
         minHeight: "800px",
       }}
     >
