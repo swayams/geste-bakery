@@ -35,10 +35,10 @@ class Footer extends React.Component<IFooterProps, IFooterState> {
 
           <Grid item xs={6} lg={3} className="address">
             <p>
-              Geste Crossiants <br></br>
-              1234, John Doe Avenue,<br></br>
-              Toronto ZX34234<br></br>
-              Ph: 1234 1234 1234<br></br>
+              Geste Croissanterie <br></br>
+              1183, Dundas street W,<br></br>
+              Toronto, ON, M6J 1X3<br></br>
+              <a href="tel:+1 (416) 538-1710">1 (416) 538-1710</a><br></br>
             </p>
             <SocialMediaButtons direction="row" />
           </Grid>

@@ -16,6 +16,7 @@ export default function SocialMediaButtons(props) {
         url={"http://www.geste-crossaints.com"}
         about={ " Geste Crossiants - for boutique baked condiments  "}
         
+        
       >
         <WhatsappIcon size={36} />
       </WhatsappShareButton>

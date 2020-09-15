@@ -1,11 +1,9 @@
 import * as React from "react"
 
-import { Grid, Paper, Button } from "@material-ui/core"
+import {  Paper } from "@material-ui/core"
 
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import BackgroundSlider from "gatsby-image-background-slider"
-import { CSSProperties } from "@material-ui/core/styles/withStyles"
 import { ui } from "./../../constants/ui"
 import './hero.scss'
 

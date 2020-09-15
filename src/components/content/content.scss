@@ -4,7 +4,7 @@
   .contact {
     background-color: #fff;
     position: absolute;
-    top: calc(50vh - 12em);
+    top: calc(50vh - 9em);
     bottom: calc(50vh - 14em);
     height: 28em;
     width: 60%;
@@ -15,18 +15,14 @@
       width: auto;
       padding: 0 1em;
       height: 37em;
-      top: 23vh;
-      
+      top: 10vh;
     }
 
-    
-
     .control {
-     
       padding: 1em;
-      
+      flex-basis: 1;
+
       &.notes {
-       
       }
 
       h4 {
@@ -37,9 +33,9 @@
         margin: 0;
         text-align: center;
         @media (max-width: 768px) {
-          line-height: 1.5em;;
+          line-height: 1.5em;
           font-size: 1em;
-          height: 2em;          
+          height: 2em;
         }
       }
     }
@@ -132,8 +128,52 @@
         width: 100%;
       }
       .content {
+        transition: width 1s;
+        h2 {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
         p {
           font-size: 14px;
+        }
+
+        .menu {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          flex-wrap: wrap;
+
+          margin: 1em 0;
+
+          .item {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid $color-background-primary;
+            padding: 5px;
+            margin: 5px;
+
+            background-color: $color-background-primary;
+
+            &:hover {
+              background-color: $color-primary;
+              color: $color-background-primary;
+              border-color: $color-primary;
+            }
+
+            .name {
+              text-transform: uppercase;
+              font-size: 12px;
+              font-weight: 600;
+              text-align: center;
+            }
+
+            .price {
+              font-size: 36px;
+              margin: 5px;
+              text-align: right;
+            }
+          }
         }
       }
     }
@@ -156,6 +196,58 @@
           height: 20px;
           color: #fff;
         }
+      }
+    }
+  }
+}
+
+//location
+
+.location {
+  .address {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    .postal, .contacts, .social {
+      flex-basis: 0;
+    }
+   
+    .postal {
+      text-align: center;
+
+      span {
+        text-transform:  uppercase;
+        letter-spacing: 2px;
+        font-size: 24px;
+        font-weight: bold;
+        
+      }
+    }
+
+    .social {
+      margin: 0.5em 0;
+    }
+
+    .contacts {
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      height: 2em;
+      line-height: 2em;
+      
+
+      .icons {
+        width: 1.5em;
+        height: 1.5em;
+      }
+
+      a {
+        color: $color-secondary;
+        text-decoration: none;
+        font-size: 16px;
       }
     }
   }

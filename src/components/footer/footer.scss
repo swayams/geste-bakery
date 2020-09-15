@@ -64,6 +64,24 @@
 
     p {
       padding: 1em;
+      margin: 0;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      border: 1px solid #fff;
+      margin: 1.5em 5px;
+      padding: 5px;
+     
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #fff;
+        color: $color-primary;
+      }
+
     }
 
     > .MuiGrid-container {

@@ -10,13 +10,14 @@ import NewsLetterBlock from "./../components/content/newsletter"
 import Products from "../components/content/products"
 import About from "../components/content/about"
 import Location from "../components/content/location"
-import InstagramFeed from "./../components/plugins/instagram"
 import SimpleTextBlock from "./../components/content/textblock"
 import { ParallaxProvider } from "react-scroll-parallax"
-import ContactForm from './../components/content/contact';
+import ContactForm from "./../components/content/contact"
+
 
 const IndexPage = () => (
   <ParallaxProvider>
+    
     <Layout>
       <Grid container style={{ height: "100vh" }}>
         <HeroCarousel></HeroCarousel>
@@ -38,9 +39,7 @@ const IndexPage = () => (
       <Area id="Location" alt={false}>
         <Location />
       </Area>
-      <Area id="Instagram" alt={true}>
-        <InstagramFeed />
-      </Area>
+     
     </Layout>
   </ParallaxProvider>
 )

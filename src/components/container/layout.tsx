@@ -9,11 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from '../header/header';
-import { ILink } from '../header/nav';
-import {  Grid, ThemeProvider } from "@material-ui/core";
-import Footer from "../footer/Footer";
-import { theme } from '../theme';
+import Header from "../header/header"
+import { ILink } from "../header/nav"
+import { Grid, ThemeProvider } from "@material-ui/core"
+import Footer from "../footer/Footer"
+import { theme } from "../theme"
+import { ImageProvider } from '../content/Images';
 
 
 const Layout = ({ children }) => {
@@ -28,15 +29,21 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={theme}>
-     <Grid container >
-        <Header siteTitle="Test" siteLogo="../images/gatsby-icon.png" links={links}></Header>
-        <Grid item xs={12}><main>{children}</main></Grid>
-        
-      </Grid>
-      <Footer></Footer>
-     
-    </ThemeProvider>
+    <ImageProvider>
+      <ThemeProvider theme={theme}>
+        <Grid container>
+          <Header
+            siteTitle="Test"
+            siteLogo="../images/icons/icon-white.jpg"
+            links={links}
+          ></Header>
+          <Grid item xs={12}>
+            <main>{children}</main>
+          </Grid>
+        </Grid>
+        <Footer></Footer>
+      </ThemeProvider>
+    </ImageProvider>
   )
 }
 
@@ -47,8 +54,7 @@ Layout.propTypes = {
 export default Layout
 
 const links: ILink[] = [
-  {name: 'home', url: '../pages/index.js'},
-  {name: 'about', url:  '../pages/about.js'},
-  {name: 'contact us', url: '../pages/contact-us.js'},
-  
+  { name: "home", url: "../pages/index.js" },
+  { name: "about", url: "../pages/about.js" },
+  { name: "contact us", url: "../pages/contact-us.js" },
 ]
