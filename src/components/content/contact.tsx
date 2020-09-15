@@ -20,7 +20,7 @@ const handleOnSubmit = e => {
     data: new FormData(form)
   })
     .then(r => {
-     console.log("success sent massate")
+     console.log("success sent ")
     })
     .catch(r => {
       console.log("failure")
@@ -62,7 +62,7 @@ const Contact = props => {
             id="notes"
             label="Notes"
             defaultValue=""
-            helperText="Let us know your preferences or special requests. We'll try our best to accomodate any special request"
+            helperText="Let us know your preferences or special requests. We'll try our best to accomadate any special request"
             variant="outlined"
             rows={3}
             multiline
