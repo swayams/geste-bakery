@@ -117,6 +117,7 @@
   .product {
     background-color: $color-background-primary;
     position: relative;
+    margin: 5px;
 
     .card {
       display: flex;
@@ -150,6 +151,7 @@
             border: 2px solid $color-background-primary;
             padding: 5px;
             margin: 5px;
+            flex-grow: 2;
 
             background-color: $color-background-primary;
 
@@ -167,9 +169,10 @@
             }
 
             .price {
-              font-size: 36px;
+              font-size: 24px;
               margin: 5px;
               text-align: right;
+              
             }
           }
         }

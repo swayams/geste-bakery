@@ -8,7 +8,6 @@ import {
   CardActionArea,
   CardMedia,
   CardActions,
-  Grow,
 } from "@material-ui/core"
 import { ui } from "../../constants/ui"
 import FavoriteIcon from "@material-ui/icons/Favorite"
@@ -16,9 +15,8 @@ import ShareIcon from "@material-ui/icons/Share"
 import ExpandLess from "@material-ui/icons/ExpandLess"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import SocialMediaButtons from "../plugins/share"
-import { ImageContext } from "./Images"
-import images from "../../constants/images"
 import { graphql, useStaticQuery } from "gatsby"
+import { Fade } from "react-reveal"
 
 export interface IProductProps {
   name: string
@@ -57,83 +55,70 @@ class Product extends React.Component<IProductProps, IProductState> {
   }
   render() {
     return (
-      <Grow in={true}>
-        <Grid item xs={12} md={this.state.isExpanded ? 6 : 4}>
-          <Grid
-            container
-            style={style.product}
-            justify="space-between"
-            className="product"
-          >
-            <Card>
-              <CardActionArea className="card">
-                <CardMedia
-                  image={this.props.image}
-                  className="image"
-                ></CardMedia>
-                <CardContent className="content">
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {this.props.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {this.state.isExpanded
-                      ? this.props.description
-                      : this.props.description.substring(0, 100) + " ..."}
-                  </Typography>
+      <Grid
+        container
+        style={style.product}
+        justify="space-between"
+        className="product"
+      >
+        <Card>
+          <CardActionArea className="card">
+            <CardMedia image={this.props.image} className="image"></CardMedia>
+            <CardContent className="content">
+              <Typography gutterBottom variant="h5" component="h2">
+                {this.props.name}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {this.state.isExpanded
+                  ? this.props.description
+                  : this.props.description.substring(0, 100) + " ..."}
+              </Typography>
 
-                  {this.state.isExpanded ? (
-                    <Items name={this.props.name}></Items>
-                  ) : (
-                    ""
-                  )}
-                </CardContent>
-              </CardActionArea>
+              <Fade bottom collapse when={this.state.isExpanded} >
+                <Items name={this.props.name} />
+              </Fade>
+            </CardContent>
+          </CardActionArea>
 
-              <CardActions className="actions">
-                <IconButton
-                  aria-label="add to favorites"
-                  className="icon"
-                  onClick={() => this.like()}
-                >
-                  <FavoriteIcon
-                    style={{ color: this.state.isLiked ? "red" : "#fff" }}
-                  />
-                </IconButton>
-                <IconButton
-                  aria-label="share"
-                  className="icon"
-                  onClick={() => this.share()}
-                >
-                  <ShareIcon direction="row-reverse" />
-                </IconButton>
-              </CardActions>
+          <CardActions className="actions">
+            <IconButton
+              aria-label="add to favorites"
+              className="icon"
+              onClick={() => this.like()}
+            >
+              <FavoriteIcon
+                style={{ color: this.state.isLiked ? "red" : "#fff" }}
+              />
+            </IconButton>
+            <IconButton
+              aria-label="share"
+              className="icon"
+              onClick={() => this.share()}
+            >
+              <ShareIcon direction="row-reverse" />
+            </IconButton>
+          </CardActions>
 
-              <CardActions className="expand">
-                <IconButton className="icon" onClick={() => this.expand()}>
-                  {this.state.isExpanded ? (
-                    <ExpandLess style={style.expansion} />
-                  ) : (
-                    <ExpandMoreIcon style={style.expansion} />
-                  )}
-                </IconButton>
+          <CardActions className="expand">
+            <IconButton className="icon" onClick={() => this.expand()}>
+              {this.state.isExpanded ? (
+                <ExpandLess style={style.expansion} />
+              ) : (
+                <ExpandMoreIcon style={style.expansion} />
+              )}
+            </IconButton>
 
-                {this.state.showShareIcons ? (
-                  <SocialMediaButtons
-                    className="share-Icons"
-                    direction="row-reverse"
-                  ></SocialMediaButtons>
-                ) : (
-                  ""
-                )}
-              </CardActions>
-            </Card>
-          </Grid>
-        </Grid>
-      </Grow>
+            {this.state.showShareIcons ? (
+              <SocialMediaButtons
+                className="share-Icons"
+                direction="row-reverse"
+              ></SocialMediaButtons>
+            ) : (
+              ""
+            )}
+          </CardActions>
+        </Card>
+      </Grid>
     )
   }
 }
@@ -164,12 +149,16 @@ const Products = () => {
     <Grid container className="products" spacing={3}>
       {productNames.map((product: string, index: number) => {
         return (
-          <Product
-            name={product}
-            key={index}
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-            image={products.find(p => p.includes(product))}
-          />
+          
+            <Grid item xs={12} md={4}><Fade right delay={index*500}>
+              <Product
+                name={product}
+                key={index}
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+                image={products.find(p => p.includes(product))}
+              /></Fade>
+            </Grid>
+          
         )
       })}
     </Grid>

@@ -1,15 +1,13 @@
 import * as React from "react"
 import {
   Grid,
-  FormControl,
-  InputLabel,
-  Input,
-  FormHelperText,
   Button,
+  
 } from "@material-ui/core"
 import { ParallaxBanner } from "react-scroll-parallax"
 import { TextField } from "@material-ui/core"
 import axios from "axios";
+import { Fade } from 'react-reveal';
 
 const handleOnSubmit = e => {
   e.preventDefault();
@@ -111,11 +109,14 @@ const ContactForm = props => {
         },
       ]}
       style={{
-        height: "135vh",
+        height: "100vh",
         minHeight: "800px",
       }}
     >
-      <Contact />
+      <Fade right delay="1000">
+        <Contact />
+      </Fade>
+      
     </ParallaxBanner>
   )
 }
