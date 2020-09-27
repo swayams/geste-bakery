@@ -12,22 +12,23 @@ import { Fade } from 'react-reveal';
 const handleOnSubmit = e => {
   e.preventDefault();
   const form = e.target;
-  axios({
-    method: "post",
-    url: "https://getform.io/f/d3eb9291-0b7d-4f1c-92e4-f5b76e8c15ee",
-    data: new FormData(form)
-  })
-    .then(r => {
-     console.log("success sent ")
+  console.log(form)
+    axios({
+      method: "post",
+      url: "https://getform.io/f/d3eb9291-0b7d-4f1c-92e4-f5b76e8c15ee",
+      data: new FormData(form)
     })
-    .catch(r => {
-      console.log("failure")
-    });
+      .then(r => {
+       alert(" Mail Sent Successfully ")
+      })
+      .catch(r => {
+        console.log("failure")
+      });
 };
 
 const Contact = props => {
   return (
-    <form action="https://getform.io/f/d3eb9291-0b7d-4f1c-92e4-f5b76e8c15ee" method="POST">
+    <form action="https://getform.io/f/d3eb9291-0b7d-4f1c-92e4-f5b76e8c15ee" onSubmit={handleOnSubmit}>
       <Grid container className="contact" justify="flex-start">
         <Grid item xs={12} className="control">
           <h4> Contact us for Orders</h4>
@@ -77,7 +78,6 @@ const Contact = props => {
               className="send-btn"
               fullWidth
               type="submit"
-              onClick={(e: any) => handleOnSubmit(e)}
             >
               Send
             </Button>
