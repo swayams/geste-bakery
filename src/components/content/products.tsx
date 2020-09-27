@@ -218,7 +218,7 @@ interface IProduct {
 
 //configuration
 
-const productNames = ["breads", "viennoiserie", "patisserie"]
+const productNames = ["breads", "viennoiserie", "epicerie"]
 
 const menuList: IMenu[] = [
   {
