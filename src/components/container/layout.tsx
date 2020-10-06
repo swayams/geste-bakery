@@ -15,6 +15,7 @@ import { Grid, ThemeProvider } from "@material-ui/core"
 import Footer from "../footer/Footer"
 import { theme } from "../theme"
 import { ImageProvider } from '../content/Images';
+import Order from '../content/order';
 
 
 const Layout = ({ children }) => {
@@ -32,6 +33,7 @@ const Layout = ({ children }) => {
     <ImageProvider>
       <ThemeProvider theme={theme}>
         <Grid container>
+          <Order />
           <Header
             siteTitle="Test"
             siteLogo="../images/icons/icon-white.jpg"

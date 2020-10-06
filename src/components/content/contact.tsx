@@ -3,32 +3,95 @@ import {
   Grid,
   Button,
   
+  
 } from "@material-ui/core"
 import { ParallaxBanner } from "react-scroll-parallax"
+import { Alert, AlertTitle } from '@material-ui/lab';
 import { TextField } from "@material-ui/core"
 import axios from "axios";
 import { Fade } from 'react-reveal';
 
-const handleOnSubmit = e => {
-  e.preventDefault();
-  const form = e.target;
-  console.log(form)
-    axios({
-      method: "post",
-      url: "https://getform.io/f/d3eb9291-0b7d-4f1c-92e4-f5b76e8c15ee",
-      data: new FormData(form)
-    })
-      .then(r => {
-       alert(" Mail Sent Successfully ")
+
+export interface IContactFormProps {
+  
+}
+ 
+export interface IContactFormState {
+  submitted: boolean
+}
+ 
+class ContactForm extends React.Component<IContactFormProps, IContactFormState> {
+  constructor(props: IContactFormProps) {
+    super(props);
+    this.state = { submitted : false  };
+  }
+
+  toggleSubmitStatus = () => {
+    this.setState( prev => ({
+      submitted: !prev.submitted,
+    }))
+  }
+
+  handleOnSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    console.log(form)
+      axios({
+        method: "post",
+        url: "https://getform.io/f/d3eb9291-0b7d-4f1c-92e4-f5b76e8c15ee",
+        data: new FormData(form)
       })
-      .catch(r => {
-        console.log("failure")
-      });
-};
+        .then(r => {
+         console.log(" Mail Sent Successfully ")
+         this.toggleSubmitStatus()
+        })
+        .catch(r => {
+          console.log("failure")
+        });
+  };
+
+  render() { 
+    return (
+      <ParallaxBanner
+        className="contact-block"
+        layers={[
+          {
+            image: "https://i.ibb.co/RjPWC1p/c-bread-factory.jpg",
+            amount: 0.3,
+          },
+        ]}
+        style={{
+          height: "100vh",
+          minHeight: "800px",
+        }}
+      >
+        <Fade right delay="1000">
+          {
+            this.state.submitted ? 
+            <Message />
+            : <Contact submit={() => this.handleOnSubmit}/>         
+          }
+        </Fade>
+        
+      </ParallaxBanner>
+    );
+  }
+}
+
+const Message = (prop) => {
+
+  return (
+    <Alert severity="warning">
+        <AlertTitle>Warning</AlertTitle>
+        This is a warning alert — <strong>check it out!</strong>
+      </Alert>
+  )
+}
+ 
 
 const Contact = props => {
   return (
-    <form action="https://getform.io/f/d3eb9291-0b7d-4f1c-92e4-f5b76e8c15ee" onSubmit={handleOnSubmit}>
+    <form  onSubmit={props.submit}>
       <Grid container className="contact" justify="flex-start">
         <Grid item xs={12} className="control">
           <h4> Contact us for Orders</h4>
@@ -98,26 +161,6 @@ const Contact = props => {
   )
 }
 
-const ContactForm = props => {
-  return (
-    <ParallaxBanner
-      className="contact-block"
-      layers={[
-        {
-          image: "https://i.ibb.co/RjPWC1p/c-bread-factory.jpg",
-          amount: 0.3,
-        },
-      ]}
-      style={{
-        height: "100vh",
-        minHeight: "800px",
-      }}
-    >
-      <Fade right delay="1000">
-        <Contact />
-      </Fade>
-      
-    </ParallaxBanner>
-  )
-}
-export default ContactForm
+
+export default ContactForm;
+

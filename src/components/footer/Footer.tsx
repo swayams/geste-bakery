@@ -44,7 +44,7 @@ class Footer extends React.Component<IFooterProps, IFooterState> {
           </Grid>
 
           <Grid item xs={12} className="static">
-            2020 - All rights reserved | crafted with &#10084; by Swayam
+            2020 - All rights reserved | crafted with &#10084; at <a href="https://theochreconcept.co.uk" target="_blank" class="studio"> Ochre </a> 
           </Grid>
         </Grid>
       </footer>

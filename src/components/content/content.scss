@@ -18,6 +18,12 @@
       top: 10vh;
     }
 
+    .send-btn {
+      &:hover {
+        color: #fff !important;
+      }
+    }
+
     .control {
       padding: 1em;
       flex-basis: 1;
@@ -37,6 +43,24 @@
         }
       }
     }
+  }
+}
+
+.order-button {
+  position: fixed !important;
+  background-color: $color-background-primary ;
+  color: $color-primary ;
+
+  width: 7rem;
+  text-align: center;
+  right: 1rem;
+  bottom: 1rem;
+
+  z-index: 999999999;
+
+  &:hover {
+    background-color: $color-secondary;
+    color: #fff;
   }
 }
 

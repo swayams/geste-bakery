@@ -40,9 +40,16 @@ const query = graphql`
     }
   }
 `
+const resetHref = (e) => {
+  let id = e.target.id
+  location.hash = '';
+  location.hash = "#"+id
+}
 
 const Header = () => {
   const src = useStaticQuery(query).file.childCloudinaryAsset.fluid.src
+
+
 
   return (
     <AppBar position="sticky" style={style}>
@@ -63,21 +70,21 @@ const Header = () => {
         <Hidden mdDown>
           <Grid container direction="row" className="nav">
             <Grid item xs={2}>
-              <Link className="link"> Our Story </Link>
+              <Link className="link" href="#Story" onClick={(e) => resetHref(e)}> Our Story </Link>
             </Grid>
             <Grid item xs={2}>
-              <Link className="link"> Creations </Link>
+              <Link className="link" href="#Products" onClick={(e) => resetHref(e)}> Creations </Link>
             </Grid>
             <Grid item xs={4}>
-              <Link className="title">
+              <Link className="title" href="#hero" onClick={() => resetHref()}>
                 <img src={src} alt="Geste-Croissanterie-Final-logo" border={0} style={{margin: 0}}/>
               </Link>
             </Grid>
             <Grid item xs={2}>
-              <Link className="link"> Find Us </Link>
+              <Link className="link" href="#Location" onClick={() => resetHref()}> Find Us </Link>
             </Grid>
             <Grid item xs={2}>
-              <Link className="link"> Order </Link>
+              <Link className="link" href="#contact" onClick={() => resetHref()}> Order </Link>
             </Grid>
           </Grid>
         </Hidden>

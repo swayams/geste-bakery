@@ -14,17 +14,18 @@ export const theme = createMuiTheme({
         primary: {
             main: ui.scheme.secondary ,
             dark: ui.scheme.primary,
-            light: "#78002e"
+            light: ui.scheme.secondaryAlt
         },
         secondary: {
-            main: "#1e88e5",
-            light: "#6ab7ff",
-            dark: "#005cb2"
+            main: ui.scheme.background,
+            light: ui.scheme.backgroundAlt,
+            dark: ui.scheme.primary
         },
     },
     shape: {
         borderRadius: 5
     },
     spacing: 10,
+    
 
 });

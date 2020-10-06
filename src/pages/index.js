@@ -16,22 +16,22 @@ import ContactForm from "./../components/content/contact"
 const IndexPage = () => (
   <ParallaxProvider>
     <Layout>
-      <Grid container style={{ height: "100vh" }}>
+      <Grid container style={{ height: "100vh" }} id={"hero"}>
         <HeroCarousel></HeroCarousel>
       </Grid>
       <SimpleTextBlock text="Therefore, the smart way to build a massive online following is to embed Instagram feeds and other social media profiles to your website." />
-      <Area id="Products" alt={false}>
+      <Area id="Products" name="Products" alt={false}>
         <Products />
       </Area>
-      <Area id="contact" alt={false}>
+      <Area id="contact" name="Contact" alt={false}>
         <ContactForm />
       </Area>
-      <Area id="Story" alt={false}>
+      <Area id="Story" name="Story" alt={false}>
         <About />
       </Area>
       <SimpleTextBlock text="Therefore, the smart way to build a massive online following is to embed Instagram feeds and other social media profiles to your website." />
 
-      <Area id="Location" alt={false}>
+      <Area id="Location" name="Location" alt={false}>
         <Location />
       </Area>
     </Layout>
