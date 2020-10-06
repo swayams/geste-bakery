@@ -12,6 +12,7 @@ import Location from "../components/content/location"
 import SimpleTextBlock from "./../components/content/textblock"
 import { ParallaxProvider } from "react-scroll-parallax"
 import ContactForm from "./../components/content/contact"
+import { Helmet } from "react-helmet"
 
 const IndexPage = () => (
   <>
