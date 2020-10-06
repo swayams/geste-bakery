@@ -77,14 +77,14 @@ const Header = () => {
             </Grid>
             <Grid item xs={4}>
               <Link className="title" href="#hero" onClick={() => resetHref()}>
-                <img src={src} alt="Geste-Croissanterie-Final-logo" border={0} style={{margin: 0}}/>
+                <img src={src} alt="Geste-Croissanterie-Final-logo" alt="logo" border={0} style={{margin: 0}}/>
               </Link>
             </Grid>
             <Grid item xs={2}>
               <Link className="link" href="#Location" onClick={() => resetHref()}> Find Us </Link>
             </Grid>
             <Grid item xs={2}>
-              <Link className="link" href="#contact" onClick={() => resetHref()}> Order </Link>
+              <Link className="link" href="#contact"  onClick={() => resetHref()}> Order </Link>
             </Grid>
           </Grid>
         </Hidden>

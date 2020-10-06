@@ -8,7 +8,7 @@ import { Parallax, ParallaxBanner } from "react-scroll-parallax"
 
 const ParallaxImage = () => (
   <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
-    <img src="https://i.ibb.co/RjPWC1p/c-bread-factory.jpg" />
+    <img alt="background" src="https://i.ibb.co/RjPWC1p/c-bread-factory.jpg" />
   </Parallax>
 )
 

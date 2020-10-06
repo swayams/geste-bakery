@@ -15,6 +15,12 @@ import ContactForm from "./../components/content/contact"
 
 const IndexPage = () => (
   <ParallaxProvider>
+    <Helmet>
+      <meta charSet="utf-8" name="description">Bespoke artisanal bread and Croissants handmade in house from local and organic ingrediants.</meta>
+      <title>Geste Crossiants</title>
+      <link rel="canonical" href="https://geste-croissant.com" />
+      
+    </Helmet>
     <Layout>
       <Grid container style={{ height: "100vh" }} id={"hero"}>
         <HeroCarousel></HeroCarousel>
