@@ -17,10 +17,12 @@ import { Helmet } from "react-helmet"
 const IndexPage = () => (
   <>
     <Helmet>
-      <meta charSet="utf-8" name="description">
-        Bespoke artisanal bread and Croissants handmade in house from local and
-        organic ingrediants.
-      </meta>
+      <meta
+        charSet="utf-8"
+        name="description"
+        content="Bespoke artisanal bread and Croissants handmade in house from local and
+        organic ingrediants."
+      />
       <title>Geste Crossiants</title>
       <link rel="canonical" href="https://geste-croissant.com" />
     </Helmet>
